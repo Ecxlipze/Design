@@ -1,0 +1,206 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.landing-page {
+  position: relative;
+  max-width: 1440px;   /* Keeps original design width */
+  margin: 0 auto;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Panel Defaults */
+.panel {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Top Banner */
+.panel.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63px;
+  background-image: url("../images/Sky.png");
+}
+
+/* Left Wall */
+.panel.left {
+  top: 0;
+  left: 0;
+  width: 122px;
+  height: 100%;
+  background-image: url("../images/Left.png");
+}
+
+/* Right Wall */
+.panel.right {
+  top: 0;
+  right: 0;
+  width: 121px;
+  height: 100%;
+  background-image: url("../images/Right.png");
+}
+
+/* Back Wall */
+.panel.back {
+  top: 63px; /* below banner */
+  left: 122px;
+  width: calc(100% - 243px); /* full width minus left+right */
+  height: 610px;
+  background-image: url("../images/Front.png");
+}
+
+/* Floor */
+.panel.floor {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 83px;
+  background-image: url("../images/Floor.png");
+}
+
+/* Explore Button */
+.explore-btn {
+  position: absolute;
+  right: -35px;
+  top: 38%;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: right center;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .landing-page {
+    max-width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .panel.back {
+    height: auto;
+    aspect-ratio: 1198 / 610;
+    min-height: 400px;
+  }
+
+  .panel.left,
+  .panel.right {
+    bottom: 0;
+    height: auto;
+  }
+
+  .panel.top {
+    height: 50px;
+  }
+
+  .panel.floor {
+    height: 60px;
+  }
+}
+
+/* Better scaling for tablets */
+@media (max-width: 992px) {
+  .panel.left {
+    width: 80px;
+  }
+
+  .panel.right {
+    width: 80px;
+  }
+
+  .panel.back {
+    left: 80px;
+    width: calc(100% - 160px);
+  }
+
+  .panel.top {
+    height: 40px;
+  }
+
+  .panel.floor {
+    height: 50px;
+  }
+}
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  .panel.left {
+    width: 50px;
+  }
+
+  .panel.right {
+    width: 50px;
+  }
+
+  .panel.back {
+    left: 50px;
+    width: calc(100% - 100px);
+    min-height: 300px;
+  }
+
+  .panel.top {
+    height: 35px;
+  }
+
+  .panel.floor {
+    height: 40px;
+  }
+
+  .explore-btn {
+    right: -25px;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .panel.left {
+    width: 30px;
+  }
+
+  .panel.right {
+    width: 30px;
+  }
+
+  .panel.back {
+    left: 30px;
+    width: calc(100% - 60px);
+    min-height: 250px;
+  }
+
+  .panel.top {
+    height: 25px;
+  }
+
+  .panel.floor {
+    height: 30px;
+  }
+
+  .explore-btn {
+    right: -20px;
+    font-size: 0.6rem;
+    padding: 6px 12px;
+  }
+}
